@@ -1,6 +1,7 @@
 const inputs = document.querySelectorAll('button')
 const display = document.getElementById('display')
 const operators = ['+','-','*','/', '=']
+const numbers = ['.','0','1','2','3','4','5','6','7','8','9']
 
 function add (array) {
 	return array.reduce((accumulator, currentValue) => accumulator + currentValue)
@@ -129,3 +130,22 @@ function compute(input) {
 }
 
 inputs.forEach(input => input.addEventListener('click',  (e) => compute(e.target.value)))
+
+window.addEventListener('keydown', (e) => {
+    //console.log(e.key)
+
+    if (e.key == 'Enter'){
+        compute('=')
+    }
+    else if (e.key == 'Backspace'|| e.key == 'Delete'){
+        compute('delete')
+    }
+    else if (e.key == 'c'){
+        compute('clear')
+    }
+    else if (operators.indexOf(e.key) != -1 || numbers.indexOf(e.key) != -1)
+    {
+        compute(e.key)
+    }
+    else return
+})
