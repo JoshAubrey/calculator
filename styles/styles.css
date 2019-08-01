@@ -3,7 +3,8 @@ html {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100%;
-	font-family: Palantino, sans-serif;
+    font-family: Palantino, sans-serif;
+    
 }
 #title, h1 {
     width: 400px;
@@ -88,9 +89,50 @@ button:hover, button:active {
     outline:none;
     box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
     background-color: grey;
-	transition: 0.5s;
-	color: white;
+    color: white;
+    transition: 0.5s;
 }
 button:focus {
     outline: none;
 }
+
+@media screen and (max-width: 1000px) {
+    body {
+        display: initial;
+    }
+    #title, h1 {
+        display: none;
+    }
+
+    #container {
+        border: none;
+        border-radius: 0px;
+        box-shadow: none;
+        height: 100vh;
+        width: auto;
+        grid-template-rows: repeat(7, 14.28%);
+        grid-template-columns: repeat(4, 25%);
+    }
+    #display {
+        font-size: 7em;
+        line-height: 7em;
+        border-radius: .75em;
+    }
+    button {
+        font-size: 5em;
+        margin:4px 4px;
+        border-radius: .75em;
+        
+    }
+    * { -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+}
+@media screen and (max-width: 1000px) and (orientation: landscape) {
+    #display {
+        font-size: 5em;
+    }
+    button {
+        font-size: 3em;
+    }
+}
+
