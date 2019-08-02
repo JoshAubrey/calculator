@@ -73,9 +73,9 @@ function compute(input) {
     const prevInput = displayArray.slice(-1).join('')
     const prevInputIsOperator = operators.indexOf(prevInput) != -1
 
-    const regNumber = /[0-9]\.*[0-9]*/g
+    const regNumber = /[0-9]+\.?[0-9]*/g
     const regOperator = /[+\-*/]/g
-    const regNumbersOperators = /[0-9]\.*[0-9]*|[+\-*/]/g
+    const regNumbersOperators = /[0-9]+\.?[0-9]*|[+\-*/]/g
 
     const currentNumber = display.value.split(regOperator).pop()
     const currentOperator = display.value.split(regNumber).filter(x => x).pop()
